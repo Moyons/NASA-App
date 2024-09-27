@@ -1,0 +1,23 @@
+body {
+  background-color: #1e1e2f;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.sidebar {
+  background: linear-gradient(0deg, #ba54f5 0%, #5e72e4 100%);
+  height: 86vh;
+  width: 14rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+  }
+
+.navbar {
+  
+}
