@@ -8,23 +8,9 @@ import Navbar from "./components/NavBar/Navbar";
 function App() {
 
   return (
-    /*<>
-    <div>
-      <li><Link to='/Pod'>Pod</Link></li>
-    </div>
-
-    <Routes>
-      <Route path='/Pod' element={ <Pod />}></Route>
-    </Routes> 
-    </>*/
-
-    <div>
-      <Navbar>
-
-      </Navbar>
-      <Sidebar>
-
-      </Sidebar>
+    <div className="app">
+      <Navbar />
+      <Sidebar />
     </div>
     
   )

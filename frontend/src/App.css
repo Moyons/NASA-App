@@ -1,23 +1,50 @@
-body {
+body,
+.app {
   background-color: #1e1e2f;
-  color: white;
   font-family: sans-serif;
   text-align: center;
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.sidebar {
-  background: linear-gradient(0deg, #ba54f5 0%, #5e72e4 100%);
-  height: 86vh;
-  width: 14rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-  margin-left: 1rem;
-  border-radius: 5px;
-  }
+a:hover {
+  color:black !important;
+  font-size: 1.1rem;
+}
+
+.menu {
+  color:white;
+  font-family: poppins;
+  font-size: 13px;
+  text-align: left;
+}
 
 .navbar {
-  
+  background-color: #1e1e2f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  padding: 1rem;
 }
+
+.navbar-left {
+  color: white;
+  font-size: 1.5rem;
+  font-family: poppins;
+}
+
+.navbar-right {
+  padding: 0.6rem 1.5rem;
+  position: fixed;
+  top: -0.5rem;
+  right: 0.3rem;
+}
+
+/** {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif !important;
+}*/
