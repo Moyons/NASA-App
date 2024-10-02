@@ -6,7 +6,7 @@ import { DateField } from '@mui/x-date-pickers/DateField';
 import '../styles/Mars.css';
 import { FormControl, MenuItem, Select, InputLabel, ListItemText } from '@mui/material';
 
-const apiUrl = 'https://localhost:3001';
+const apiUrl = process.env.REACT_APP_API_URL;
 
 class Mars extends Component {
 

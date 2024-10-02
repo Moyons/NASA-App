@@ -12,10 +12,9 @@ const generateRandomDate = () => {
     return dayjs(randomDate).format('YYYY-MM-DD'); 
 }
 
-const apiUrl = 'https://localhost:3001';
+const apiUrl = process.env.REACT_APP_API_URL;
 
 class PodFilter extends Component{
-
 
     state = {
         photo: null,
