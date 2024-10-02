@@ -6,13 +6,12 @@ const cors = require('cors');
 
 require('dotenv').config();
 
-const API_KEY = process.env.API_KEY;
-
+const API_KEY = "vS3mHym9Gskup5Y2Ejdp3eBHUcFY18XKlgGUnBTg"
 
 app.use(cors({
     origin: process.env.NODE_ENV === 'production' 
-        ? 'https://bounce-insights-chall.vercel.app'
-        : 'http://localhost:3001',
+        ? 'https://bounce-insights-chall-front.vercel.app'
+        : 'http://localhost:3000',
 }));
 
 app.get("/", (req, res) => res.json({ message: "Hello from server!" }));
