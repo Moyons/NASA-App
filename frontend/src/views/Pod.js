@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import '../styles/Pod.css';
 
+const apiUrl = 'https://bounce-insights-chall.vercel.app';
+
 class Pod extends Component {
 
     state = {
@@ -10,7 +12,7 @@ class Pod extends Component {
     }
 
     componentDidMount() {
-        fetch("./apod")
+        fetch(`${apiUrl}/apod`)
            .then(response => { return response.json() })
            .then(json => { this.setState({ photo: json, loading: false})})
            .catch(error => console.log(error))

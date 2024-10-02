@@ -12,7 +12,10 @@ const generateRandomDate = () => {
     return dayjs(randomDate).format('YYYY-MM-DD'); 
 }
 
+const apiUrl = 'https://bounce-insights-chall.vercel.app';
+
 class PodFilter extends Component{
+
 
     state = {
         photo: null,
@@ -26,7 +29,7 @@ class PodFilter extends Component{
 
         this.setState({ loading: true });
 
-        fetch(`./apodDate?date=${dayjs(date).format('YYYY-MM-DD')}`)
+        fetch(`${apiUrl}/apodDate?date=${dayjs(date).format('YYYY-MM-DD')}`)
             .then(response => response.json())
             .then(json => this.setState({ photo: json, loading: false }))
             .catch(error => {

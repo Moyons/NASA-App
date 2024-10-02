@@ -6,6 +6,8 @@ import { DateField } from '@mui/x-date-pickers/DateField';
 import '../styles/Mars.css';
 import { FormControl, MenuItem, Select, InputLabel, ListItemText } from '@mui/material';
 
+const apiUrl = 'https://bounce-insights-chall.vercel.app';
+
 class Mars extends Component {
 
     state = {
@@ -22,7 +24,7 @@ class Mars extends Component {
         this.setState({ loading: true });
     
         const formattedDate = dayjs(date).format('YYYY-MM-DD');
-        let url = `./mars?date=${formattedDate}`;
+        let url = `${apiUrl}/mars?date=${formattedDate}`;
         if (selectedOption && selectedOption !== "ALL CAMERAS") {
             url += `&camera=${selectedOption}`;
         }
