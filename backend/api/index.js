@@ -9,7 +9,7 @@ require('dotenv').config();
 
 app.use(cors({
     origin: process.env.NODE_ENV === 'production' 
-        ? 'https://your-frontend-url.vercel.app'
+        ? 'https://bounce-insights-chall.vercel.app'
         : 'http://localhost:3000',
 }));
 
