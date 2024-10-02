@@ -6,7 +6,7 @@ import { DateField } from '@mui/x-date-pickers/DateField';
 import '../styles/Mars.css';
 import { FormControl, MenuItem, Select, InputLabel, ListItemText } from '@mui/material';
 
-const apiUrl = 'https://bounce-insights-chall.vercel.app';
+const apiUrl = 'https://localhost:3001';
 
 class Mars extends Component {
 

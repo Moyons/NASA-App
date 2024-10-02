@@ -12,7 +12,7 @@ const generateRandomDate = () => {
     return dayjs(randomDate).format('YYYY-MM-DD'); 
 }
 
-const apiUrl = 'https://bounce-insights-chall.vercel.app';
+const apiUrl = 'https://localhost:3001';
 
 class PodFilter extends Component{
 
