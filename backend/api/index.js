@@ -3,6 +3,15 @@ const express = require("express");
 const fetch = require("node-fetch");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const cors = require('cors');
+
+require('dotenv').config();
+
+app.use(cors({
+    origin: process.env.NODE_ENV === 'production' 
+        ? 'https://your-frontend-url.vercel.app'
+        : 'http://localhost:3000',
+}));
 
 app.get("/", (req, res) => res.json({ message: "Hello from server!" }));
 
