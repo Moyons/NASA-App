@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import '../styles/Pod.css';
 
-const apiUrl = 'https://bounce-insights-chall.vercel.app';
+const apiUrl = process.env.REACT_APP_API_URL;
 
 class Pod extends Component {
 
