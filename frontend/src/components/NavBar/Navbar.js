@@ -1,16 +1,10 @@
-import "../../App.css";
+import "../../styles/App.css";
 import logo from '../../images/nasa.png';
 
-function Navbar(props) {
-
+function Navbar() {
     return(
-        <div className="navbar">
-            <div className="navbar-left">
-                Text
-            </div>
-            <div className="navbar-right">
-                <img src={logo} alt=""/>
-            </div>
+        <div className="navbar-right">
+            <img src={logo} alt=""/>
         </div>
     );
 }

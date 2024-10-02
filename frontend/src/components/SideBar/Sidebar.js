@@ -1,16 +1,14 @@
-import "../../App.css";
+import "../../styles/App.css";
 import React, { useState } from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import CameraAlt from "@mui/icons-material/CameraAlt";
-import Mars from "@mui/icons-material/Public";
-import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
-import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
-import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
-import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+import MarsImg from "@mui/icons-material/Public";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-
-// #141b2d
+import PodFilterImg from "@mui/icons-material/PhotoFilter";
+import { Routes, Route, Link } from "react-router-dom";
+import Pod from "../../views/Pod";
+import Mars from "../../views/Mars"
+import PodFilter from "../../views/PodFilter";
 
 function Side() {
 
@@ -25,15 +23,16 @@ function Side() {
     };
 
     return(
-        <div>
+        <div style={{display: "flex"}}>
             <Sidebar
-                backgroundColor="#4630a6"
-                rootStyles={{ border: 'none'}}
-                style={{ height: "100%", position: "absolute"}}
-                toggled={toggled}
                 collapsed={collapsed}
+                toggled={toggled}
                 handleToggleSidebar={handleToggleSidebar}
                 handleCollapsedChange={handleCollapsedChange}
+                backgroundColor="#4630a6"
+                transitionDuration={500}
+                rootStyles={{ border: 'none'}}
+                style={{ height: "100vh"}}
             >
                 <Menu className="menu">
                     {collapsed ? (
@@ -50,20 +49,47 @@ function Side() {
                         >
                             <div style={{ 
                                 fontSize: 20,
+                                fontWeight: "bold",
                                 textAlign:"center",
                             }} >
                                 I. Moyons
                             </div>
                         </MenuItem>
                     )}
-                    <hr/>
-                    <MenuItem icon={<CameraAlt/>} className="menu-item">Picture of the Day</MenuItem>
-                    <MenuItem icon={<Mars/>} className="menu-item"> Mars pictures </MenuItem>
+                    <MenuItem 
+                        icon={<CameraAlt/>} 
+                        className="menu-item" 
+                        component={<Link to="pod" className="link"/>}
+                    >
+                        Today's picture
+                    </MenuItem>
+                    <MenuItem 
+                        icon={<PodFilterImg/>} 
+                        className="menu-item" 
+                        component={<Link to="podFilter" className="link"/>}
+                    >
+                        Filter POD
+                    </MenuItem>
+                    <MenuItem 
+                        icon={<MarsImg/>} 
+                        className="menu-item"
+                        component={<Link to="mars" className="link"/>}
+                    > 
+                        Mars pictures 
+                    </MenuItem>
                 </Menu>                
             </Sidebar>
-        </div>
-        
+            <section>
+                <Routes>
+                    <Route path="/" element={<Pod/>} />   
+                    <Route path="*" element={<Pod/>} />
+                    <Route path="pod" element={<Pod/>} />
+                    <Route path="podFilter" element={<PodFilter/>} />
+                    <Route path="mars" element={<Mars/>} />
+                </Routes>
+            </section>
+        </div> 
     );
-}
+};
 
 export default Side;

@@ -1,7 +1,5 @@
 import React from "react";
-import "./App.css";
-import Pod from "./Pod";
-import { Route, Routes, Link } from 'react-router-dom';
+import "./styles/App.css";
 import Sidebar from "./components/SideBar/Sidebar";
 import Navbar from "./components/NavBar/Navbar";
 
@@ -11,8 +9,7 @@ function App() {
     <div className="app">
       <Navbar />
       <Sidebar />
-    </div>
-    
+    </div>   
   )
 }
 

@@ -1,0 +1,27 @@
+body,
+.app {
+  background-color: #1e1e2f;
+  font-family: sans-serif;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.navbar-right {
+  padding: 0.6rem 1.5rem;
+  position: absolute;
+  top: -0.5rem;
+  right: 0.3rem;
+}
+
+.menu {
+  color:white;
+  font-family: poppins;
+  font-size: 13px;
+  text-align: left;
+}
+
+a:hover {
+  color:black !important;
+  font-size: 1.1rem;
+}
