@@ -1,4 +1,3 @@
-const API_KEY = "vS3mHym9Gskup5Y2Ejdp3eBHUcFY18XKlgGUnBTg";
 const express = require("express");
 const fetch = require("node-fetch");
 const PORT = process.env.PORT || 3001;
@@ -7,10 +6,13 @@ const cors = require('cors');
 
 require('dotenv').config();
 
+const API_KEY = process.env.API_KEY;
+
+
 app.use(cors({
     origin: process.env.NODE_ENV === 'production' 
         ? 'https://bounce-insights-chall.vercel.app'
-        : 'http://localhost:3000',
+        : 'http://localhost:3001',
 }));
 
 app.get("/", (req, res) => res.json({ message: "Hello from server!" }));
