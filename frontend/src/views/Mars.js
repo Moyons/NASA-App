@@ -12,7 +12,7 @@ class Mars extends Component {
         photos: [],
         loading: true,
         collapsed: false,
-        selectedOption: "",
+        selectedOption: "ALL CAMERAS",
         date: dayjs('2024-01-01'),
     }
 
@@ -23,7 +23,7 @@ class Mars extends Component {
     
         const formattedDate = dayjs(date).format('YYYY-MM-DD');
         let url = `./mars?date=${formattedDate}`;
-        if (selectedOption) {
+        if (selectedOption && selectedOption !== "ALL CAMERAS") {
             url += `&camera=${selectedOption}`;
         }
 
@@ -57,16 +57,6 @@ class Mars extends Component {
         this.setState({ date: newDate });
     }
 
-    /*<LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <DemoContainer components={['DateField']}>
-                            <DateField 
-                                className="df-theme-mars" 
-                                label="Date Filter"
-                                value={date}
-                                onChange={this.handleDateChange}
-                            />
-                        </DemoContainer>
-                    </LocalizationProvider>*/
 
     render() {
         const { photos, loading, date, selectedOption } = this.state;
@@ -82,7 +72,7 @@ class Mars extends Component {
         return (
             <div>
                 <h1 style={{marginLeft: "5rem"}}>MARS</h1>
-                <div className="container-mars" width="100%">
+                <div className="container-mars" width="100vh">
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DateField 
                                 className="df-theme-mars" 
@@ -100,6 +90,9 @@ class Mars extends Component {
                             onChange={this.handleOptionChange}
                             renderValue={(selected) => selected}
                         >
+                            <MenuItem className="menuItem" value="ALL CAMERAS">
+                                <ListItemText primary="ALL CAMERAS" />
+                            </MenuItem>
                             <MenuItem className="menuItem" value="FHAZ">
                                 <ListItemText primary="FHAZ" />
                             </MenuItem>
@@ -145,7 +138,7 @@ class Mars extends Component {
                             ))
                         ) : (
                             <div className="center-text"> 
-                                <h2>Server is down or no results found for this date and camera.</h2>
+                                <h2>The server is temporarily unavailable, or no results match the search criteria.</h2>
                             </div>
                         )}
                 </div>

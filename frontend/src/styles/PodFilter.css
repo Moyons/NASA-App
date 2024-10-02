@@ -1,16 +1,16 @@
 .df-theme {
     position: relative;
     background-color: #1e1e2f;   
-    width: 35%;
+    width: 60%;
 }
 
 .df-theme .MuiInputBase-root {
     background-color: #33334b;
     border-radius: 10px;
     color: #D1C8DC;
-    margin-left: 100%;
+    margin-left: 70%;
     margin-top: 2rem;
-    width: 35%;
+    width: 150px;
 }
 
 .df-theme .MuiOutlinedInput-notchedOutline {
@@ -19,7 +19,7 @@
 
 .df-theme label {
     color: #D1C8DC;
-    margin-left: 100%;
+    margin-left: 70%;
     margin-top: 2rem;
 }
 
@@ -27,4 +27,12 @@
     color: #D1C8DC;
     font-family: sans-serif;
     margin-left: 0%;
+}
+
+.center-text h2 {
+    color: #D1C8DC;
+    position: absolute;
+    margin-right: 3rem;
+    top: 14rem;
+    left: 2rem;
 }

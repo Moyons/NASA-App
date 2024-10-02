@@ -97,7 +97,7 @@ class PodFilter extends Component{
                     </div>
                 ) : (
                     <div className="center-text"> 
-                        <h2>Server is crurently down or under maintenance. Please contact administrator.</h2>
+                        <h2>Server is temporarily unavailable or undergoing maintenance. Please contact the administrator for assistance.</h2>
                     </div>
                 )}
             </div>     

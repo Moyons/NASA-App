@@ -4,7 +4,9 @@ import logo from '../../images/nasa.png';
 function Navbar() {
     return(
         <div className="navbar-right">
-            <img src={logo} alt=""/>
+            <a href="https://api.nasa.gov/" target="_blank" rel="noopener noreferrer">
+                <img src={logo} alt="NASA logo" />
+            </a>
         </div>
     );
 }
