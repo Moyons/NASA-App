@@ -2,8 +2,8 @@ const request = require('supertest');
 const app = require('../api/index.js');
 
 describe('API Endpoints', () => {
-    it('GET /api - should return a message', async () => {
-        const response = await request(app).get('/api');
+    it('GET / - should return a message', async () => {
+        const response = await request(app).get('/');
         expect(response.status).toBe(200);
         expect(response.body.message).toBe('Hello from server!');
     });
