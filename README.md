@@ -1,14 +1,12 @@
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <h2 align="center">Ivan Moyons - Bounce Insights Challenge</h2>
 
   <p align="center">
-    This README contains all the information you need to set up, start, and use this web application.
+    This README provides all the necessary information to set up, start, and use this web application.
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -30,27 +28,28 @@
       <a href="#usage">Usage</a>
       <ul>
         <li><a href="#test">Testing</a></li>
-        <li><a href="#use-case">Use Case</a></li>
+        <li><a href="#production">Production</a></li>
+        <li><a href="#use-cases">Use Cases</a></li>
+        <li><a href="#server-downtime">Server Downtime</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-
-
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project is a web application that utilizes NASA's APIs (https://api.nasa.gov/) to showcase space-related data. It features a React frontend that communicates with a Node.js backend running Express. The web application is deployed on Vercel.
+This project is a web application that utilizes NASA's API (https://api.nasa.gov/) to showcase space-related data. It features a React frontend that communicates with a Node.js backend running Express. The web application is deployed on Vercel.
 
-NASA's APIs offer a wide range of endpoints, allowing users to explore and interact with various space data. Some of the endpoints included are:
+NASA's API offers a wide range of endpoints, allowing users to explore and interact with various space data. Some of these endpoints are:
 
 * Astronomy Picture of the Day (APOD)
 * Mars Rover Photos
 * Earth Polychromatic Imaging Camera (EPIC)
 * NASA Image and Video Library
 
-In this project, we specifically utilize the APOD and Mars photos with filters.
+For this project, we specifically use the APOD and Mars Rover Photos, applying filters to enhance the user experience.
+
+**Note:** "POD" refers to the Picture of the Day.
 
 
 ### Built With
@@ -62,72 +61,81 @@ The primary frameworks, libraries and tools used in this project are:
 * Express
 * Vercel
 
-<!-- GETTING STARTED -->
 ## Getting Started
 
 ### Prerequisites
 
-Navigate to the local path where you want to store the cloned repository.
+Navigate to the local path where you want to store the cloned repository
   ```sh
   cd C:\your_local_path
   ```
 
 ### Installation
 
-1. Get a free API Key at https://api.nasa.gov/.
-2. Clone the repo
+1. Get a free API key at https://api.nasa.gov/.
+2. Clone the repository
    ```sh
    git clone https://github.com/Moyons/Bounce-Insights-Chall.git
    ```
-3. Go to the frontend folder and install npm
+3. Navigate to the frontend folder and install npm packages
    ```sh
    cd .\Bounce-Insights-Chall\frontend\
    npm install
    ```   
-4. Enter your API in `backend .env` file
+4. Enter your API key in `backend .env` file
    ```.env
    API_KEY = ENTER_YOUR_API
    ```
 
 ### Start
 
-1. Open a new terminal and go the backend folder
+1. Open a new terminal and navigate to the backend folder
    ```sh
    cd .\Bounce-Insights-Chall\backend\
    ```
-2. Launch the server
+2. Start the server
    ```sh
    $\backend> npm start
    ```
-3. In the terminal with the frontend folder alreyed open, launch the client
+3. In the terminal where the frontend folder alreyed open, start the client
    ```sh
    $\frontend> npm start
    ```
-4. The web application will open in the browser in the http://localhost:3000 url.
-5. The server will be launched in http://localhost:3001.
+4. The web application will open in your browser at http://localhost:3000 url.
+5. The server will run at http://localhost:3001.
 
-<!-- USAGE EXAMPLES -->
 ## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 ### Test
 
-### Use Case
+1. In your terminal, navigate to the backend folder.
+2. If the server is running, stop it by pressing Ctrl + C.
+3. Run the following command to start the tests:
+   ```sh
+   $\backend> npm test
+   ```
+This will initiate a test using "jest," sending requests to the server. All requests should return a 200 OK status (successful request).
 
+### Production
 
+The web application was deployed with vercel and can be accessed at https://bounce-insights-chall-front.vercel.app/.
 
-## By doing the next steps you can push the changes to GitHub
+### Use Cases
 
-1. git add .
-2. git commit -m "comment"
-3. git push origin master
+The application is divided in 3 different menus:
 
-## api/index.js is the important file which answers when the client sends a get method
+* <b>Picture of the day</b>
 
-## By doing the next steps you can pull the changes from GitHub to local
+This section displays NASA's Astronomy Picture of the Day (APOD), showing today's picture along with a description.
 
-1. git fetch origin
-2. git pull origin master
+* <b>Filter POD</b>
+
+This section shows a random NASA Picture of the Day, with an option to filter by a specific date.
+
+* <b>Mars Photos</b>
+
+This section allows users to view Mars Rover photos for a specified date. By default, the date is set to January 1, 2024, showing photos from all available cameras. Users can filter the photos by date and camera.
+
+### Server downtime
+
+If the server experiences issues, no results will be displayed in any section. The "Picture of the Day" section will show a loading indicator, while other sections will display a message indicating that the server is down.
