@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-  <h2 align="center">Ivan Moyons - Bounce Insights Challenge</h2>
+  <h2 align="center">Ivan Moyons - NASA App</h2>
 
   <p align="center">
     This README provides all the necessary information to set up, start, and use this web application.
